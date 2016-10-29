@@ -40,6 +40,10 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.FileChooser = new System.Windows.Forms.OpenFileDialog();
+            this.FolderBrowser = new System.Windows.Forms.FolderBrowserDialog();
+            this.AddToFile = new System.Windows.Forms.Button();
+            this.Submit = new System.Windows.Forms.Button();
             this.MenuBar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -91,6 +95,7 @@
             this.BtnInputFolder.TabIndex = 4;
             this.BtnInputFolder.Text = "Browse...";
             this.BtnInputFolder.UseVisualStyleBackColor = true;
+            this.BtnInputFolder.Click += new System.EventHandler(this.BtnInputFolder_Click);
             // 
             // BtnOutputFolder
             // 
@@ -142,11 +147,32 @@
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
+            // AddToFile
+            // 
+            this.AddToFile.Location = new System.Drawing.Point(15, 196);
+            this.AddToFile.Name = "AddToFile";
+            this.AddToFile.Size = new System.Drawing.Size(75, 23);
+            this.AddToFile.TabIndex = 7;
+            this.AddToFile.Text = "Append File";
+            this.AddToFile.UseVisualStyleBackColor = true;
+            // 
+            // Submit
+            // 
+            this.Submit.Location = new System.Drawing.Point(132, 196);
+            this.Submit.Name = "Submit";
+            this.Submit.Size = new System.Drawing.Size(75, 23);
+            this.Submit.TabIndex = 8;
+            this.Submit.Text = "Process";
+            this.Submit.UseVisualStyleBackColor = true;
+            this.Submit.Click += new System.EventHandler(this.Submit_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(229, 195);
+            this.ClientSize = new System.Drawing.Size(229, 231);
+            this.Controls.Add(this.Submit);
+            this.Controls.Add(this.AddToFile);
             this.Controls.Add(this.BtnOutputFolder);
             this.Controls.Add(this.BtnInputFolder);
             this.Controls.Add(this.BtnInputFile);
@@ -182,6 +208,10 @@
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.OpenFileDialog FileChooser;
+        private System.Windows.Forms.FolderBrowserDialog FolderBrowser;
+        private System.Windows.Forms.Button AddToFile;
+        private System.Windows.Forms.Button Submit;
     }
 }
 
